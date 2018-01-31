@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Profile"
+        android:id="@+id/nav_item_inbox"
+        android:icon="@drawable/profile_clipart"/>
+
+    <item android:title="Points"
+        android:id="@+id/nav_item_sent"
+        android:icon="@drawable/points_clipart"/>
+
+
+
+
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:title="Help"
+                android:icon="@drawable/help"/>
+            <item
+                android:title="About Us"
+                android:icon="@drawable/draft"/>
+        </menu>
+    </item>
+
+    <group android:id="@+id/group_settings_id">
+
+
+        <item android:title="Logout"
+            android:icon="@drawable/settings"
+            android:id="@+id/logout"/>
+
+    </group>
+
+
+
+</menu>

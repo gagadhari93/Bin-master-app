@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnRadioHome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#FDFDFD"
+    tools:context="com.example.anjana.binmaster.LocationPicker">
+
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/button_shape_ovel"
+        android:text="Submit"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/textLocationView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/btnSubmit"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Loation:"
+        android:layout_above="@+id/textLocationView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:text="Click the map Icon to launch the map"
+        android:textSize="18sp"
+        android:layout_above="@+id/btnMap"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+
+        android:background="@drawable/map_icon"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:layout_above="@+id/textView4"
+        android:layout_alignLeft="@+id/btnSubmit"
+        android:layout_alignStart="@+id/btnSubmit" />
+</RelativeLayout>
+

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.anjana.binmaster.RegisterActivity"
+    android:background="#FDFDFD">
+
+
+    <EditText
+        android:id="@+id/txtFullName"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_shape_ovel"
+
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/txtEmail"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_shape_ovel"
+
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/txtAddress"
+        android:layout_alignLeft="@+id/txtFullName"
+        android:layout_alignStart="@+id/txtFullName" />
+
+    <EditText
+        android:id="@+id/txtAddress"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_shape_ovel"
+
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="24dp"
+        android:layout_above="@+id/txtMobileNumber"
+        android:layout_alignLeft="@+id/txtEmail"
+        android:layout_alignStart="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtMobileNumber"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_shape_ovel"
+
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/txtAddress"
+        android:layout_alignStart="@+id/txtAddress" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_shape_ovel"
+
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtMobileNumber"
+        android:layout_alignLeft="@+id/txtMobileNumber"
+        android:layout_alignStart="@+id/txtMobileNumber" />
+
+    <EditText
+        android:id="@+id/txtReEnterPasword"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/textview_shape_ovel"
+
+        android:ems="10"
+        android:fontFamily="serif"
+        android:hint="Re-Enter Password"
+        android:inputType="textPassword"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/txtPassword"
+        android:layout_alignLeft="@+id/txtPassword"
+        android:layout_alignStart="@+id/txtPassword" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtReEnterPasword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_shape_ovel"
+        android:onClick="goNext"
+        android:text="Next"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+</RelativeLayout>
+

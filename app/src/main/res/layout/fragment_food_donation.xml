@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.anjana.binmaster.HomePage.FoodDonation">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnFloating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:clickable="true"
+        app:backgroundTint="#FF0893D8"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/floating_button_icon" />
+
+
+
+</RelativeLayout>
