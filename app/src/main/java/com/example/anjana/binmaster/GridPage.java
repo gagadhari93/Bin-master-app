@@ -37,7 +37,8 @@ public class GridPage extends AppCompatActivity implements NumberPicker.OnValueC
     String v1,v2,v3,v4,v5,v6;
     static Dialog d ;
     String uId;
-    String url = "http://192.168.8.100:8000/api/send";
+    int areaId;
+    String url = "http://192.168.8.103:8000/api/send";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class GridPage extends AppCompatActivity implements NumberPicker.OnValueC
 
         prefs=getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         uId=prefs.getString("uId","");
-
+        areaId=prefs.getInt("areaId",0);
 //--------------------------------------------------------------------------------------------------
         tv1 = (TextView) findViewById(R.id.textViewOrganic);//xml file item id
         Button b1 = (Button) findViewById(R.id.btnOrganic);
@@ -177,6 +178,7 @@ public class GridPage extends AppCompatActivity implements NumberPicker.OnValueC
                         params.put("v5",v5);
                         params.put("v6",v6);
                         params.put("uId",uId);
+                        params.put("areaId",""+areaId);
                         return params;
                     }
                 };

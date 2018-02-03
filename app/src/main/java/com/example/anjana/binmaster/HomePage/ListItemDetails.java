@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class ListItemDetails extends AppCompatActivity {
 
-    String url="http://192.168.8.100:8000/api/itemClick";
+    String url="http://192.168.8.103:8000/api/itemClick";
 
     SharedPreferences prefs;
     SharedPreferences.Editor editor;

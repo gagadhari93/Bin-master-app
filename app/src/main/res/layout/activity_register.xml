@@ -20,7 +20,8 @@
         android:inputType="textPersonName"
         android:layout_marginBottom="22dp"
         android:layout_above="@+id/txtEmail"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/profile_clipart"/>
 
     <EditText
         android:id="@+id/txtEmail"
@@ -35,7 +36,8 @@
         android:layout_marginBottom="20dp"
         android:layout_above="@+id/txtAddress"
         android:layout_alignLeft="@+id/txtFullName"
-        android:layout_alignStart="@+id/txtFullName" />
+        android:layout_alignStart="@+id/txtFullName"
+        android:drawableLeft="@drawable/email_clipart"/>
 
     <EditText
         android:id="@+id/txtAddress"
@@ -50,7 +52,8 @@
         android:layout_marginBottom="24dp"
         android:layout_above="@+id/txtMobileNumber"
         android:layout_alignLeft="@+id/txtEmail"
-        android:layout_alignStart="@+id/txtEmail" />
+        android:layout_alignStart="@+id/txtEmail"
+        android:drawableLeft="@drawable/location_clipart"/>
 
     <EditText
         android:id="@+id/txtMobileNumber"
@@ -64,7 +67,8 @@
         android:inputType="phone"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/txtAddress"
-        android:layout_alignStart="@+id/txtAddress" />
+        android:layout_alignStart="@+id/txtAddress"
+        android:drawableLeft="@drawable/phone_clipart"/>
 
     <EditText
         android:id="@+id/txtPassword"
@@ -79,7 +83,8 @@
         android:layout_marginTop="20dp"
         android:layout_below="@+id/txtMobileNumber"
         android:layout_alignLeft="@+id/txtMobileNumber"
-        android:layout_alignStart="@+id/txtMobileNumber" />
+        android:layout_alignStart="@+id/txtMobileNumber"
+        android:drawableLeft="@drawable/lock_clipart"/>
 
     <EditText
         android:id="@+id/txtReEnterPasword"
@@ -94,7 +99,8 @@
         android:layout_marginTop="25dp"
         android:layout_below="@+id/txtPassword"
         android:layout_alignLeft="@+id/txtPassword"
-        android:layout_alignStart="@+id/txtPassword" />
+        android:layout_alignStart="@+id/txtPassword"
+        android:drawableLeft="@drawable/lock_clipart"/>
 
     <Button
         android:id="@+id/btnNext"

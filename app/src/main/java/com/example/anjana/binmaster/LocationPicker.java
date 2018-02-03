@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -48,12 +49,15 @@ public class LocationPicker  extends AppCompatActivity {
     int PLACE_PICKER_REQUEST=1;
     Button mapButton,btnSubmit;
     String Lplace,fullname,email,address,mobileno,password;
-    String url = "http://192.168.8.100:8000/api/register";
+    String url = "http://192.168.8.103:8000/api/register";
     List<String> areas;
+    List<Integer> areadIds;
     ArrayAdapter<String> adapter;
     Spinner spinner;
+    String area;
+    int areaId;
 
-    String urlSpinner="http://192.168.8.100:8000/api/spinner";
+    String urlSpinner="http://192.168.8.103:8000/api/spinner";
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
@@ -68,27 +72,23 @@ public class LocationPicker  extends AppCompatActivity {
         btnSubmit=(Button)findViewById(R.id.btnSubmit);
         mapButton=(Button)findViewById(R.id.btnMap);
         get_place=(TextView)findViewById(R.id.textLocationView);
-
-
         spinner =(Spinner)findViewById(R.id.spinner);
-
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,areas);
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, urlSpinner, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 areas = new ArrayList<String>();
-
+                areadIds = new ArrayList<Integer>();
                 try {
                     JSONArray jsonArray = new JSONArray(response);
                     for(int i = 0;i<jsonArray.length();i++)
                     {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         areas.add(jsonObject.getString("areaName"));
-
+                        areadIds.add(jsonObject.getInt("id"));
                     }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(LocationPicker.this,android.R.layout.simple_spinner_dropdown_item,areas);
+                    adapter = new ArrayAdapter<String>(LocationPicker.this,android.R.layout.simple_expandable_list_item_1,areas);
                     spinner.setAdapter(adapter);
 
 
@@ -102,16 +102,25 @@ public class LocationPicker  extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
 
             }
-        })
-        {
-
-        };
-
-
+        });
         MySingleton.getInstance(LocationPicker.this).addToRequestQueue(stringRequest);
 
 
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView v = (TextView)view;
+                area = v.getText().toString();
+                areaId=areadIds.get(i);
+                Toast.makeText(LocationPicker.this,area,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
 
@@ -156,7 +165,8 @@ public class LocationPicker  extends AppCompatActivity {
                 String location=String.format("Place:%s\n%s",place.getAddress(),place.getLatLng());
                 get_place.setText(location);
 
-                Lplace = place.getLatLng().toString();
+                Lplace = place.getLatLng().latitude+","+place.getLatLng().longitude;
+
 
 
             }
@@ -169,7 +179,7 @@ public class LocationPicker  extends AppCompatActivity {
     }
 
 
-  
+
 
     public void OnClick(){
 
@@ -206,10 +216,13 @@ public class LocationPicker  extends AppCompatActivity {
                         Toast.makeText(LocationPicker.this,"Please Select your Locations!",Toast.LENGTH_LONG).show();
                     }
                     else{
+                        editor.putInt("areaId",areaId);
+                        editor.commit();
                         Intent i =new Intent(LocationPicker.this,LoginActivity.class);
 
 
                         startActivity(i);
+                        finish();
                     }
 
                 } catch (JSONException e) {
@@ -233,7 +246,7 @@ public class LocationPicker  extends AppCompatActivity {
                 params.put("mobileno",mobileno);
                 params.put("password",password);
                 params.put("Lplace",Lplace);
-
+                params.put("areaId",""+areaId);
                 return params;
             }
         };
