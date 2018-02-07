@@ -49,7 +49,7 @@ public class LocationPicker  extends AppCompatActivity {
     int PLACE_PICKER_REQUEST=1;
     Button mapButton,btnSubmit;
     String Lplace,fullname,email,address,mobileno,password;
-    String url = "http://192.168.8.103:8000/api/register";
+    String url = "http://192.168.8.100:8000/api/register";
     List<String> areas;
     List<Integer> areadIds;
     ArrayAdapter<String> adapter;
@@ -57,7 +57,7 @@ public class LocationPicker  extends AppCompatActivity {
     String area;
     int areaId;
 
-    String urlSpinner="http://192.168.8.103:8000/api/spinner";
+    String urlSpinner="http://192.168.8.100:8000/api/spinner";
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
@@ -113,7 +113,7 @@ public class LocationPicker  extends AppCompatActivity {
                 TextView v = (TextView)view;
                 area = v.getText().toString();
                 areaId=areadIds.get(i);
-                Toast.makeText(LocationPicker.this,area,Toast.LENGTH_LONG).show();
+
             }
 
             @Override

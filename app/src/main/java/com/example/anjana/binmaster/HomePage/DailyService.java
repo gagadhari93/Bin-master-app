@@ -45,7 +45,7 @@ public class DailyService extends Fragment {
 
 
 
-    String url="http://192.168.8.103:8000/api/display";
+    String url="http://192.168.8.100:8000/api/display";
 
     String uId;
 
@@ -72,8 +72,8 @@ public class DailyService extends Fragment {
 
 
         prefs = this.getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        uId=prefs.getString("uId","fuck");
-        Toast.makeText(getActivity(),uId,Toast.LENGTH_LONG).show();
+        uId=prefs.getString("uId",null);
+
 
 
 

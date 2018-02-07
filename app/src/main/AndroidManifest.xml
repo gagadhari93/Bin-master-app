@@ -27,29 +27,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
-        </activity>
-        <activity android:name=".RegisterActivity">
-        </activity>
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_place_api" />
 
-        <activity android:name=".MobileNumberValidation">
-        </activity>
-        <activity android:name=".RegSuccessPage">
-        </activity>
-        <activity android:name=".HomePage.HomePage">
-        </activity>
-        <activity android:name=".GridPage">
-        </activity>
-        <activity android:name=".LocationPicker">
-        </activity>
-        <activity android:name=".DogFood">
-        </activity>
-        <activity android:name=".HomePage.ListItemDetails">
-        </activity>
+        <activity
+            android:name=".MobileNumberValidation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".RegSuccessPage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".HomePage.HomePage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".GridPage"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".LocationPicker"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".DogFood"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".HomePage.ListItemDetails"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".HomePage.DogFoodDetails"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

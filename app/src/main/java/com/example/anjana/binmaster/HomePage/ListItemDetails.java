@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class ListItemDetails extends AppCompatActivity {
 
-    String url="http://192.168.8.103:8000/api/itemClick";
+    String url="http://192.168.8.100:8000/api/itemClick";
 
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
@@ -73,18 +73,18 @@ public class ListItemDetails extends AppCompatActivity {
                 try {
                     JSONArray jsonArray = new JSONArray(response);
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
-                    tvev1.setText(""+jsonObject.getInt("expectedOrganicQuantity"));
-                    tvev2.setText(""+jsonObject.getInt("expectedPlasticQuantity"));
-                    tvev3.setText(""+jsonObject.getInt("expectedPaperQuantity"));
-                    tvev4.setText(""+jsonObject.getInt("expectedGlassQuantity"));
-                    tvev5.setText(""+jsonObject.getInt("expectedMetalQuantity"));
-                    tvev6.setText(""+jsonObject.getInt("expectedElectronicQuantity"));
-                    tvrv1.setText(""+jsonObject.getInt("realOrganicQuantity"));
-                    tvrv2.setText(""+jsonObject.getInt("realPlasticQuantity"));
-                    tvrv3.setText(""+jsonObject.getInt("realPaperQuantity"));
-                    tvrv4.setText(""+jsonObject.getInt("realGlassQuantity"));
-                    tvrv5.setText(""+jsonObject.getInt("realMetalQuantity"));
-                    tvrv6.setText(""+jsonObject.getInt("realElectronicQuantity"));
+                    tvev1.setText(""+jsonObject.getDouble("expectedOrganicQuantity"));
+                    tvev2.setText(""+jsonObject.getDouble("expectedPlasticQuantity"));
+                    tvev3.setText(""+jsonObject.getDouble("expectedPaperQuantity"));
+                    tvev4.setText(""+jsonObject.getDouble("expectedGlassQuantity"));
+                    tvev5.setText(""+jsonObject.getDouble("expectedMetalQuantity"));
+                    tvev6.setText(""+jsonObject.getDouble("expectedElectronicQuantity"));
+                    tvrv1.setText(""+jsonObject.getDouble("realOrganicQuantity"));
+                    tvrv2.setText(""+jsonObject.getDouble("realPlasticQuantity"));
+                    tvrv3.setText(""+jsonObject.getDouble("realPaperQuantity"));
+                    tvrv4.setText(""+jsonObject.getDouble("realGlassQuantity"));
+                    tvrv5.setText(""+jsonObject.getDouble("realMetalQuantity"));
+                    tvrv6.setText(""+jsonObject.getDouble("realElectronicQuantity"));
                     state.setText(""+jsonObject.getInt("state"));
 
 
