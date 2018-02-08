@@ -35,7 +35,7 @@ public class DogFood extends AppCompatActivity implements NumberPicker.OnValueCh
 
     TextView tv;
     String v1;
-    String url="http://192.168.8.100:8000/api/sendDogFood";
+    String url="http://192.168.8.102:8000/api/sendDogFood";
 
     String uId;
     int areaId;

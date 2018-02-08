@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Profile"
-        android:id="@+id/nav_item_inbox"
+        android:id="@+id/nav_item_profile"
         android:icon="@drawable/profile_clipart"/>
 
     <item android:title="Points"
-        android:id="@+id/nav_item_sent"
+        android:id="@+id/nav_item_points"
         android:icon="@drawable/points_clipart"/>
 
 
@@ -16,11 +16,13 @@
     <item android:title="Others">
         <menu>
             <item
-                android:title="Help"
-                android:icon="@drawable/help"/>
+                android:title="Complains"
+                android:icon="@drawable/help"
+                android:id="@+id/nev_item_complains"/>
             <item
                 android:title="About Us"
-                android:icon="@drawable/draft"/>
+                android:icon="@drawable/draft"
+                android:id="@+id/nev_item_aboutUs"/>
         </menu>
     </item>
 

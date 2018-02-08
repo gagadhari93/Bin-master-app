@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class ListItemDetails extends AppCompatActivity {
 
-    String url="http://192.168.8.100:8000/api/itemClick";
+    String url="http://192.168.8.102:8000/api/itemClick";
 
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
@@ -85,7 +85,7 @@ public class ListItemDetails extends AppCompatActivity {
                     tvrv4.setText(""+jsonObject.getDouble("realGlassQuantity"));
                     tvrv5.setText(""+jsonObject.getDouble("realMetalQuantity"));
                     tvrv6.setText(""+jsonObject.getDouble("realElectronicQuantity"));
-                    state.setText(""+jsonObject.getInt("state"));
+                    state.setText("aaa");
 
 
                 } catch (JSONException e) {

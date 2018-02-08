@@ -45,7 +45,7 @@ public class FoodDonation extends Fragment {
     List<String> dates;
     List<Integer> ids;
     ArrayAdapter<String> adapter;
-    String url="http://192.168.8.100:8000/api/displayDogFoodRequest";
+    String url="http://192.168.8.102:8000/api/displayDogFoodRequest";
 
 
 

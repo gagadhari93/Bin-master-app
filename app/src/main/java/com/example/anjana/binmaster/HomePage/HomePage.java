@@ -21,7 +21,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.anjana.binmaster.AboutUs;
+import com.example.anjana.binmaster.Complains;
 import com.example.anjana.binmaster.LoginActivity;
+import com.example.anjana.binmaster.Points;
 import com.example.anjana.binmaster.R;
 
 public class HomePage extends AppCompatActivity {
@@ -72,11 +75,25 @@ public class HomePage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 drawerLayout.closeDrawers();
 
-                if (item.getItemId()== R.id.nav_item_sent) {
+                if (item.getItemId()== R.id.nav_item_points) {
+                    Intent i=new Intent(HomePage.this, Points.class);
+                    startActivity(i);
+
+                }
+                if (item.getItemId()== R.id.nev_item_complains) {
+                    Intent i=new Intent(HomePage.this,Complains.class);
+                    startActivity(i);
+
+
+                }
+                if (item.getItemId()== R.id.nev_item_aboutUs) {
+                    Intent i=new Intent(HomePage.this, AboutUs.class);
+                    startActivity(i);
 
                 }
 
-                if (item.getItemId()==R.id.nav_item_inbox)
+
+                if (item.getItemId()==R.id.nav_item_profile)
                 {
                     FragmentTransaction fragmentTransaction1=FM.beginTransaction();
                     fragmentTransaction1.replace(R.id.containerView,new TabFragment()).commit();

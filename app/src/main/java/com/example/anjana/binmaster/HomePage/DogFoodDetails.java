@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class DogFoodDetails extends AppCompatActivity {
 
-    String url="http://192.168.8.100:8000/api/dogFooditemClick";
+    String url="http://192.168.8.102:8000/api/dogFooditemClick";
 
     SharedPreferences prefs;
     SharedPreferences.Editor editor;

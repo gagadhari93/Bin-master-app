@@ -45,7 +45,7 @@ public class DailyService extends Fragment {
 
 
 
-    String url="http://192.168.8.100:8000/api/display";
+    String url="http://192.168.8.102:8000/api/display";
 
     String uId;
 
