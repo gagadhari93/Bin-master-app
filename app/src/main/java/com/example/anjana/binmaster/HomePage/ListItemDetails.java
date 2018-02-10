@@ -3,6 +3,7 @@ package com.example.anjana.binmaster.HomePage;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -85,7 +86,18 @@ public class ListItemDetails extends AppCompatActivity {
                     tvrv4.setText(""+jsonObject.getDouble("realGlassQuantity"));
                     tvrv5.setText(""+jsonObject.getDouble("realMetalQuantity"));
                     tvrv6.setText(""+jsonObject.getDouble("realElectronicQuantity"));
-                    state.setText("aaa");
+
+                   String condition=""+jsonObject.get("state");
+
+                    if(condition=="0"){
+                        state.setText("Not Completed");
+                        state.setTextColor(Color.rgb(194,24,7));
+                    }else{
+
+                        state.setText("Completed");
+                        state.setTextColor(Color.rgb(0,187,51));//not working
+                    }
+
 
 
                 } catch (JSONException e) {

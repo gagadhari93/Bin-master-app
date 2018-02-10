@@ -17,15 +17,31 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.example.anjana.binmaster.AboutUs;
 import com.example.anjana.binmaster.Complains;
 import com.example.anjana.binmaster.LoginActivity;
+import com.example.anjana.binmaster.MySingleton;
 import com.example.anjana.binmaster.Points;
+import com.example.anjana.binmaster.Profile;
 import com.example.anjana.binmaster.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HomePage extends AppCompatActivity {
 
@@ -36,6 +52,9 @@ public class HomePage extends AppCompatActivity {
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     Intent i;
+    String userName;
+    String uId;
+    String url="http://192.168.8.102:8000/api/getUserName";
 
 
 
@@ -47,6 +66,7 @@ public class HomePage extends AppCompatActivity {
 
         prefs=getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         editor=prefs.edit();
+        uId=prefs.getString("uId",null);
 
         ActionBar actionBar = getSupportActionBar();
 
@@ -54,16 +74,59 @@ public class HomePage extends AppCompatActivity {
         actionBar.hide();
 
 
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    JSONArray jsonArray=new JSONArray(response);
+                    JSONObject jsonObject=jsonArray.getJSONObject(0);
+                     userName=""+jsonObject.get("fullname");
+
+
+
+                    View hView =  navigationView.inflateHeaderView(R.layout.nav_header_main);
+                    ImageView imgvw = (ImageView)hView.findViewById(R.id.imageView);
+                    TextView tv = (TextView)hView.findViewById(R.id.textView);
+                    imgvw .setImageResource(0);
+                    tv.setText(userName);
+
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+
+                params.put("uId",uId);
+                return params;
+            }
+        };
+
+
+        MySingleton.getInstance(HomePage.this).addToRequestQueue(stringRequest);
+
+
+
+
+
+
 
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         navigationView= (NavigationView) findViewById(R.id.shitstuff);
 
-        View hView =  navigationView.inflateHeaderView(R.layout.nav_header_main);
-        ImageView imgvw = (ImageView)hView.findViewById(R.id.imageView);
-        TextView tv = (TextView)hView.findViewById(R.id.textView);
-        imgvw .setImageResource(0);
-        tv.setText("Anjana");
 
 
         FM= getSupportFragmentManager();
@@ -95,8 +158,8 @@ public class HomePage extends AppCompatActivity {
 
                 if (item.getItemId()==R.id.nav_item_profile)
                 {
-                    FragmentTransaction fragmentTransaction1=FM.beginTransaction();
-                    fragmentTransaction1.replace(R.id.containerView,new TabFragment()).commit();
+                    Intent i=new Intent(HomePage.this, Profile.class);
+                    startActivity(i);
 
                 }
                 if (item.getItemId()==R.id.logout){

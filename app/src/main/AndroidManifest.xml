@@ -64,7 +64,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".Points" />
         <activity android:name=".Complains" />
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AboutUs" />
+        <activity android:name=".Profile" />
+        <activity android:name=".ComplainDetails"></activity>
     </application>
 
 </manifest>
